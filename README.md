@@ -21,11 +21,15 @@ cd script
 
 The executables will be placed under the out directory.
 
+# The configuration file
+
+You can use the configuration file, config.json, to change the database and the collection name to use. Plus, you can add more mongodb indexes to speed up the query. If you want to know which fields you can index, take a look at the files content listed here: https://nvd.nist.gov/vuln/data-feeds#JSON_FEED
+
 # Importing the national vulnerability database
 In oreder to create a database with the national vulnerabilities, you have to download the JSON files from 
 https://nvd.nist.gov/vuln/data-feeds#JSON_FEED. You will find a JSON file for every year until now, plus two
-file which will contain the modified and recent vulerabilities, that you can use to sync your local database with 
-the new discovered vulnerabilities. I reccomand you to separate the modified and recent JSON feed, from the yearly feed files.
+files which contains the modified and recent vulerabilities, that you can use to sync your local database with 
+the new discovered vulnerabilities. I recommend you to separate the modified and recent JSON feed, from the yearly feed files.
 You can place these files wherever you want, for example:
 
 ```bash
