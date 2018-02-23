@@ -1,0 +1,26 @@
+{
+	"database": "ndv",
+	"collection": "archive",
+	"indexes": [
+		{
+			"name": "cve.CVE_data_meta.ID",
+			"type": 1,
+			"unique": true
+		},
+		{
+			"name": "cve.affects.vendor.vendor_data.vendor_name",
+			"type": 1,
+			"unique": false
+		},
+		{
+			"name": "cve.affects.vendor.vendor_data.product.product_data.product_name",
+			"type": 1,
+			"unique": false
+		},
+		{
+			"name": "cve.affects.vendor.product.product_data.version.version_value",
+			"type": 1,
+			"unique": false
+		}
+	]
+}
