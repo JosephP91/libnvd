@@ -4,7 +4,7 @@
 #include <mongocxx/instance.hpp>
 
 #include "../include/file_loader.h"
-#include "../include/nvd_database.hpp"
+#include "../include/database.hpp"
 
 using std::cerr;
 using std::endl;
