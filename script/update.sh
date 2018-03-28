@@ -9,7 +9,7 @@ set -e
 
 # Check arguments number.
 if [ $# -lt 1 ] ;then
-    printf "Usage: ndv_update.sh update_archive_path\n"
+    printf "Usage: update.sh update_archive_path\n"
     exit 1
 fi
 

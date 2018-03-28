@@ -9,7 +9,7 @@ set -e
 
 # Check arguments number.
 if [ $# -lt 1 ] ;then
-    printf "Usage: ndv_import.sh insert_archive_path\n"
+    printf "Usage: import.sh insert_archive_path\n"
     exit 1
 fi
 
