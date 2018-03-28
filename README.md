@@ -36,6 +36,14 @@ files which contains the modified and recent vulerabilities, that you can use to
 the new discovered vulnerabilities. You can use the download script placed under the script directory. It will
 download every JSON feed on the page in the ```feed``` directory.
 
+```bash
+# Download all the JSON files
+cd nvd-import/script
+./download
+```
+
+
+
 I recommend you to separate the modified and recent JSON feed, from the yearly feed files.
 You can place these files wherever you want, for example:
 
