@@ -52,14 +52,14 @@ Then you can start to import those files using the script nvd_import.sh:
 
 ```bash
 cd script
-./nvd_import.sh path_to_yearly_json_feed
+./import.sh path_to_yearly_json_feed
 ```
 
 Wait until the all the files are processed. Then, you can process the recent and modified files:
 
 ```bash
 cd script
-./nvd_update.sh path_to_recent_and_modified_files
+./update.sh path_to_recent_and_modified_files
 ```
 
 Done! :)
