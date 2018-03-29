@@ -1,0 +1,8 @@
+.DS_Store
+.idea/*
+.vagrant/*
+feeds/*
+ubuntu-xenial-16.04-cloudimg-console.log
+CMakeLists.txt
+LICENSE
+out/*
