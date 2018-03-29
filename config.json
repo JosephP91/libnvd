@@ -1,5 +1,5 @@
 {
-	"database": "ndv",
+	"database": "nvd",
 	"collection": "archive",
 	"indexes": [
 		{
