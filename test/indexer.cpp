@@ -3,7 +3,7 @@
 
 #include <mongocxx/instance.hpp>
 
-#include "../include/file_loader.h"
+#include "../include/file_loader.hpp"
 #include "../include/database.hpp"
 
 using std::exit;
