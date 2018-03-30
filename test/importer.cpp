@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cstdlib>
 
+#include <mongocxx/instance.hpp>
+
 #include "file_loader.hpp"
 #include "database.hpp"
 

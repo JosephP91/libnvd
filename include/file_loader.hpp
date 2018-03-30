@@ -1,5 +1,5 @@
-#ifndef MIMPORT_STREAM_LOADER_H
-#define MIMPORT_STREAM_LOADER_H
+#ifndef NVD_FILE_LOADER_HPP
+#define NVD_FILE_LOADER_HPP
 
 #include <string>
 
@@ -19,4 +19,4 @@ namespace nvd {
 }
 
 
-#endif //MIMPORT_STREAM_LOADER_H
+#endif //NVD_FILE_LOADER_HPP

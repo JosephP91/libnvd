@@ -1,4 +1,4 @@
-# curlcppConfig.cmake - Configuration file for external projects.
+# nvdConfig.cmake - Configuration file for external projects.
 
 set(NVD_INCLUDE_DIRS "@NVD_SOURCE_DIR@/include")
 set(NVD_LIBRARY_DIRS "@NVD_BINARY_DIR@/src")

@@ -1,5 +1,5 @@
-#ifndef MIMPORT_MONGOIMPORTER_HPP
-#define MIMPORT_MONGOIMPORTER_HPP
+#ifndef NVD_DATABASE_HPP
+#define NVD_DATABASE_HPP
 
 #include <string>
 
@@ -24,4 +24,4 @@ namespace nvd {
     };
 }
 
-#endif //MIMPORT_MONGOIMPORTER_HPP
+#endif //NVD_DATABASE_HPP
