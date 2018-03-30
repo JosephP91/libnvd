@@ -17,7 +17,7 @@ if [ "$machine" == "Linux" ] ;then
 fi
 
 # Install latest mongoc driver
-wget https://github.com/mongodb/mongo-c-driver/releases/download/1.9.2/mongo-c-driver-1.9.3.tar.gz
+wget https://github.com/mongodb/mongo-c-driver/releases/download/1.9.3/mongo-c-driver-1.9.3.tar.gz
 tar -zxf mongo-c-driver-1.9.3.tar.gz
 rm ./mongo-c-driver-1.9.3.tar.gz
 cd mongo-c-driver-1.9.3

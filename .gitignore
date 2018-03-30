@@ -6,3 +6,4 @@ out/*
 .idea/
 .vagrant/
 cmake-build-debug/
+build/

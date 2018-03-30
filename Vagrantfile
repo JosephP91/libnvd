@@ -21,6 +21,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provider "virtualbox" do |vb|
     vb.customize ["modifyvm", :id, "--memory", "2048"]
-    vb.customize ["modifyvm", :id, "--name", "mimport - Ubuntu 16.04"]
+    vb.customize ["modifyvm", :id, "--name", "nvd - Ubuntu 16.04"]
   end
 end
