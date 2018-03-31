@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 project(NVD)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 
 # Checking for dependencies
 find_package(libmongocxx REQUIRED)

@@ -11,7 +11,7 @@ using std::ifstream;
 using nlohmann::json;
 
 namespace nvd {
-    class file_loader {
+    class file {
     public:
         static json load(const string &);
         static json load(const char *);
