@@ -3,18 +3,21 @@
 #include <iostream>
 #include <vector>
 
-
+#include <mongocxx/instance.hpp>
 #include <bsoncxx/builder/stream/document.hpp>
 #include <bsoncxx/json.hpp>
 
 using std::vector;
 
+void nvd::database::init() {
+    mongocxx::instance driver_instance{};
+}
 
 nvd::database::database(const string &name, const string &collection) {
+    std::call_once(mongo_once_init_flag, &nvd::database::init, this);
     this->client = mongocxx::uri{};
     this->collection = this->client[name][collection];
 }
-
 
 int32_t nvd::database::import(const json &file) {
     // Create a vector of documents to rapidly store the documents.
@@ -35,7 +38,6 @@ int32_t nvd::database::import(const json &file) {
     // Return the number of stored documents.
     return result.value().inserted_count();
 }
-
 
 int32_t nvd::database::update(const json &file) {
     // Create a set of write operations.
@@ -67,7 +69,6 @@ int32_t nvd::database::update(const json &file) {
     return result.value().upserted_count();
 }
 
-
 void nvd::database::build_indexes(const json &indexes) {
     for (const auto &index: indexes) {
         mongocxx::options::index index_options{};
@@ -87,7 +88,6 @@ void nvd::database::build_indexes(const json &indexes) {
         this->collection.create_index(index_builder.view(), index_options);
     }
 }
-
 
 void nvd::database::drop_collection() {
     this->collection.drop();
