@@ -5,12 +5,12 @@
 using std::string;
 
 
-void nvd::operation::write::append(const mongocxx::model::write &operation) {
-    this->operations.append(operation);
+void nvd::operation::base_write::append(const mongocxx::model::write &operation) {
+    this->data.append(operation);
 }
 
-mongocxx::bulk_write nvd::operation::write::get_data() {
-    return std::move(this->operations);
+template<class T> T nvd::operation::base<T>::get_data() {
+    return std::move(this->data);
 }
 
 nvd::operation::insert::insert(const nlohmann::json &file) {
@@ -66,14 +66,10 @@ nvd::operation::index::index(const nlohmann::json &indexes) {
         ));
 
         // Insert the index into the indexes map.
-        this->indexes.push_back(std::make_pair(
+        this->data.emplace_back(std::make_pair(
                 std::move(index_document),
                 std::move(index_options)
         ));
     }
-}
-
-nvd::operation::index::indexes_vector_type nvd::operation::index::get_data() {
-    return std::move(this->indexes);
 }
 

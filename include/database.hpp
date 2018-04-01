@@ -21,7 +21,7 @@ namespace nvd {
         std::once_flag mongo_once_init_flag;
 
         void init();
-        auto execute(operation::write &);
+        auto execute(operation::base_write &);
     public:
         explicit database(const string &, const string &);
         database(const database &) = delete;

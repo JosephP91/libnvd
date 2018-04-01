@@ -9,7 +9,7 @@ void nvd::database::init() {
     mongocxx::instance driver_instance{};
 }
 
-auto nvd::database::execute(nvd::operation::write &operation) {
+auto nvd::database::execute(nvd::operation::base_write &operation) {
     return this->collection.bulk_write(operation.get_data());
 }
 
