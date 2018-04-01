@@ -17,7 +17,7 @@ fi
 for file in $(ls $1 | grep ".json")
 do
     printf "Parsing and storing/updating ${file} ... "
-    ../out/updater.out $1/${file}
+    ../test/updater.out $1/${file}
     printf "Done.\n"
 done
 

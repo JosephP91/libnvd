@@ -11,9 +11,11 @@ case "${uname_machine}" in
     *)          machine="Unsupported machine:${uname_machine}. Exiting" exit;;
 esac
 
-# If we are on Linux, install mongodb and ensure all packages are installed.
+# Check the machine to install dependencies.
 if [ "$machine" == "Linux" ] ;then
     sudo apt-get update && sudo apt-get -y install cmake g++ pkg-config mongodb lynx unzip tar
+elif [ "$machine" == "Mac" ]; then
+    brew install cmake pkg-config mongodb lynx unzip tar
 fi
 
 # Install latest mongoc driver

@@ -21,7 +21,7 @@ namespace nvd {
         std::once_flag mongo_once_init_flag;
 
         void init();
-        auto execute(operation::base &);
+        auto execute(operation::write &);
     public:
         explicit database(const string &, const string &);
         database(const database &) = delete;
@@ -30,7 +30,7 @@ namespace nvd {
 
         int32_t import(operation::insert &);
         int32_t update(operation::update &);
-        void build_indexes(const json &);
+        void index(operation::index &);
         void drop_collection();
     };
 }
