@@ -11,19 +11,25 @@ cd script
 ./install.sh
 ```
 
-If you're using Linux, eveything will be installed using the script. Instead, if you are using Mac OS, 
-you have to install the following packaged: ```cmake g++ pkg-config mongodb-org php-mongodb lynx unzip```. 
-You can use brew to handle this installation.
+If you need to customize the install script, you can easly edit it.
+
+# Install
+You can compile the project and install the library doing this:
+
+```bash
+cd build
+cmake ..
+make
+sudo make install
+```
 
 # Compile
-Now that you have all the dependencies installed, you can compile the sources doing this:
+Now that you have all the dependencies installed, you can compile the test sources typing the following commands. The library uses some facilities of C++14 standard, so be sure your compiler supports it.
 
 ```bash
 cd script
 ./compile.sh
 ```
-
-The executables will be placed under the ```out``` directory.
 
 # The configuration file
 
@@ -41,8 +47,6 @@ download every JSON feed on the page in the ```feed``` directory.
 cd nvd-import/script
 ./download
 ```
-
-
 
 I recommend you to separate the modified and recent JSON feed, from the yearly feed files.
 You can place these files wherever you want, for example:
