@@ -26,8 +26,13 @@ namespace nvd {
         protected:
             T data;
         public:
-            virtual T get_data();
+            base() = default;
+            base(base &) noexcept = delete;
+            base(base &&) noexcept = default;
+            base& operator=(base&&) noexcept = delete;
             virtual ~base() = default;
+
+            virtual T get_data();
         };
 
         /**
@@ -35,6 +40,12 @@ namespace nvd {
          * records in the database.
          */
         class base_write : public base<mongocxx::bulk_write> {
+        public:
+            base_write() = default;
+            base_write(base_write &) noexcept = delete;
+            base_write(base_write &&) noexcept = default;
+            base_write& operator=(base_write&&) noexcept = delete;
+            ~base_write() override = default;
         protected:
             void append(const mongocxx::model::write &);
         };
@@ -46,6 +57,9 @@ namespace nvd {
         class insert : public base_write {
         public:
             explicit insert(const nlohmann::json &);
+            insert(insert &) noexcept = delete;
+            insert(insert &&) noexcept = default;
+            insert& operator=(insert&&) noexcept = delete;
             ~insert() override = default;
         };
 
@@ -56,6 +70,9 @@ namespace nvd {
         class update : public base_write {
         public:
             explicit update(const nlohmann::json &);
+            update(update &) noexcept = delete;
+            update(update &&) noexcept = default;
+            update& operator=(update&&) noexcept = delete;
             ~update() override = default;
         };
 
@@ -66,6 +83,9 @@ namespace nvd {
         class index : public base<indexes_vector_type> {
         public:
             explicit index(const nlohmann::json &);
+            index(index &) noexcept = delete;
+            index(index &&) noexcept = default;
+            index& operator=(index&&) noexcept = delete;
             ~index() override = default;
         };
     }

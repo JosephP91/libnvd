@@ -24,6 +24,7 @@ int main(int argc, char **argv) {
 
     // Create the insert data operation.
     nvd::operation::insert insert_operation(archive_file);
+
     // Load the nvd database.
     nvd::database database(config_file["database"], config_file["collection"]);
     // Execute the import operation.
