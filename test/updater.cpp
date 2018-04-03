@@ -3,7 +3,7 @@
 
 #include "file.hpp"
 #include "operation.hpp"
-#include "database.hpp"
+#include "client.hpp"
 
 using std::cerr;
 using std::endl;
@@ -17,17 +17,17 @@ int main(int argc, char **argv) {
         exit(EXIT_FAILURE);
     }
 
-    // Load the configuration file.
-    json config_file = nvd::file::load("../config.json");
-    // Load the archive file to process.
-    json archive_file = nvd::file::load(argv[1]);
+    // Load the configuration file and the archive to process.
+    json config = nvd::file::load("../config.json");
+    json archive = nvd::file::load(argv[1]);
 
-    // Create the update data operation.
-    nvd::operation::update update_operation(archive_file);
-    // Load the nvd database.
-    nvd::database database(config_file["database"], config_file["collection"]);
-    // Execute the update operation.
-    database.update(update_operation);
+    // Client settings and client instantiation.
+    nvd::client::settings settings(config["database"], config["collection"]);
+    nvd::client client(settings);
+
+    // Create the update data operation and execute it.
+    nvd::operation::update update_operation(archive);
+    client.execute(update_operation);
 
     exit(EXIT_SUCCESS);
 }

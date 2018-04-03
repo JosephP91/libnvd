@@ -2,7 +2,7 @@
 #include <cstdlib>
 
 #include "file.hpp"
-#include "database.hpp"
+#include "client.hpp"
 #include "operation.hpp"
 
 using std::exit;
@@ -10,14 +10,15 @@ using std::exit;
 
 int main(int argc, char **argv) {
     // Load the configuration file.
-    json config_file = nvd::file::load("../config.json");
+    json config = nvd::file::load("../config.json");
 
-    // Create the index operation.
-    nvd::operation::index index_operation(config_file["indexes"]);
-    // Load the nvd database.
-    nvd::database database(config_file["database"], config_file["collection"]);
-    // Index the collection.
-    database.index(index_operation);
+    // Client settings and istantiation of the client
+    nvd::client::settings settings(config["database"], config["collection"]);
+    nvd::client client(settings);
+
+    // Create the index operation and execute it.
+    nvd::operation::index index_operation(config["indexes"]);
+    client.execute(index_operation);
 
     exit(EXIT_SUCCESS);
 }
