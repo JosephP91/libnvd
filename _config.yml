@@ -1,1 +1,8 @@
+title: libnvd
+description: C++ library to locally store, update and index the National Vulnerabilities Database
+google_analytics: UA-64151023-6
+show_downloads: true
 theme: jekyll-theme-hacker
+
+gems:
+  - jekyll-mentions
